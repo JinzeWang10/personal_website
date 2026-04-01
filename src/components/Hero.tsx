@@ -1,146 +1,100 @@
-import { motion } from 'framer-motion';
-import { ChevronDown } from 'lucide-react';
+import { motion, useTransform } from 'framer-motion';
+import { useMousePosition } from '../hooks/useMousePosition';
+import { wipeIn, fadeUp, staggerContainer } from '../lib/animations';
 
 const Hero = () => {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
+  const { x, y, windowSize } = useMousePosition();
 
-  const item = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
-  };
+  const rotateX = useTransform(y, [0, windowSize.h], [8, -8]);
+  const rotateY = useTransform(x, [0, windowSize.w], [-8, 8]);
 
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden
-                 bg-gradient-to-br from-white via-cyan-50 to-blue-50
-                 dark:from-gray-950 dark:via-gray-900 dark:to-gray-950"
+      className="min-h-screen flex items-center relative overflow-hidden bg-black"
     >
-      {/* Animated Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <motion.div
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-400/10 dark:bg-cyan-600/10 rounded-full blur-3xl"
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
-        <motion.div
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-400/10 dark:bg-purple-600/10 rounded-full blur-3xl"
-          animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.5, 0.3, 0.5],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
-      </div>
-
-      {/* Content */}
+      {/* Mouse-reactive perspective container */}
       <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
-        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center relative z-10"
+        className="w-full"
+        style={{
+          perspective: 1000,
+        }}
       >
-        <motion.div variants={item} className="mb-6">
-          <span className="inline-block px-4 py-2 rounded-full text-sm font-medium
-                         bg-cyan-100 dark:bg-cyan-900/30 text-cyan-800 dark:text-cyan-300
-                         border border-cyan-200 dark:border-cyan-800">
-            👋 Hi, I'm Jinze
-          </span>
-        </motion.div>
-
-        <motion.h1
-          variants={item}
-          className="text-5xl md:text-7xl font-bold mb-6 leading-tight text-gray-900 dark:text-gray-100"
-        >
-          <span className="block mb-2">Data Engineer,</span>
-          <span className="block mb-2">Data Scientist &</span>
-          <span className="bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600 bg-clip-text text-transparent">AIGC Explorer</span>
-        </motion.h1>
-
-        <motion.p
-          variants={item}
-          className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 mb-8 max-w-3xl mx-auto"
-        >
-          Turning data, systems and ideas into{' '}
-          <span className="text-cyan-600 dark:text-cyan-400 font-semibold">
-            reliable, scalable
-          </span>{' '}
-          and{' '}
-          <span className="text-purple-600 dark:text-purple-400 font-semibold">
-            intelligent products
-          </span>
-          .
-        </motion.p>
-
-        <motion.p
-          variants={item}
-          className="text-lg text-gray-500 dark:text-gray-500 mb-12 max-w-2xl mx-auto
-                   italic border-l-4 border-cyan-400 pl-4"
-        >
-          I design data systems, build intelligent pipelines, and explore how AI reshapes the way people experience products.
-        </motion.p>
-
         <motion.div
-          variants={item}
-          className="flex flex-wrap gap-4 justify-center"
+          style={{ rotateX, rotateY }}
+          className="pl-8 md:pl-16 lg:pl-24 pr-8 py-20"
         >
-          <motion.a
-            href="#about"
-            className="px-8 py-4 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-600
-                     text-white font-semibold shadow-lg hover:shadow-xl
-                     transition-all duration-300"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
+          <motion.div
+            variants={staggerContainer(0.15)}
+            initial="hidden"
+            animate="show"
           >
-            About Me
-          </motion.a>
+            {/* Chapter label */}
+            <motion.p
+              variants={fadeUp}
+              className="text-xs font-medium tracking-[0.3em] text-[#555] uppercase mb-8"
+            >
+              001 / Builder
+            </motion.p>
 
-          <motion.a
-            href="#projects"
-            className="px-8 py-4 rounded-xl border-2 border-gray-300 dark:border-gray-700
-                     text-gray-700 dark:text-gray-300 font-semibold
-                     hover:border-cyan-500 dark:hover:border-cyan-500
-                     transition-all duration-300"
-            whileHover={{ scale: 1.05, y: -2 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View Projects
-          </motion.a>
+            {/* Name display */}
+            <div className="mb-8">
+              <motion.h1
+                variants={wipeIn}
+                className="text-display font-black tracking-tighter text-white leading-none"
+              >
+                王金泽
+              </motion.h1>
+              <motion.p
+                variants={fadeUp}
+                className="text-2xl font-light text-[#555] tracking-widest mt-3"
+              >
+                JINZE WANG
+              </motion.p>
+            </div>
+
+            {/* Role descriptor */}
+            <motion.p
+              variants={fadeUp}
+              className="text-sm font-light text-[#999] tracking-widest uppercase mb-8"
+            >
+              独立开发者 &mdash; Builder &mdash; 数据工程师
+            </motion.p>
+
+            {/* Separator */}
+            <motion.div
+              variants={fadeUp}
+              className="w-12 h-px bg-white/30 mb-8"
+            />
+
+            {/* One-liner */}
+            <motion.p
+              variants={fadeUp}
+              className="text-lg font-light text-[#999] max-w-md leading-relaxed"
+            >
+              独立开发者，把想法变成产品，把产品推向用户。
+            </motion.p>
+          </motion.div>
         </motion.div>
       </motion.div>
 
-      {/* Scroll Indicator */}
+      {/* Scroll indicator — falling line */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 0.6 }}
       >
-        <a
-          href="#about"
-          className="flex flex-col items-center text-gray-500 dark:text-gray-500 hover:text-cyan-500 dark:hover:text-cyan-400"
-        >
-          <span className="text-sm mb-2">Scroll</span>
-          <ChevronDown className="w-6 h-6" />
-        </a>
+        <span className="text-xs font-mono text-[#555] tracking-widest mb-3">
+          SCROLL
+        </span>
+        <div className="w-px h-12 bg-white/20 relative overflow-hidden">
+          <motion.div
+            className="w-full h-4 bg-white/60"
+            animate={{ y: ['-100%', '400%'] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+          />
+        </div>
       </motion.div>
     </section>
   );
