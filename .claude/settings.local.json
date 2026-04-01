@@ -14,7 +14,13 @@
       "Bash(git ls-tree:*)",
       "Bash(git fetch:*)",
       "Bash(gh api:*)",
-      "Bash(git restore:*)"
+      "Bash(git restore:*)",
+      "Bash(npm run:*)",
+      "Bash(netstat -ano)",
+      "Bash(findstr \":5173\")",
+      "Bash(taskkill:*)",
+      "Bash(cd:*)",
+      "Bash(npx tsc:*)"
     ],
     "deny": [],
     "ask": []

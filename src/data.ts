@@ -14,7 +14,7 @@ import { Mail, Phone, Linkedin, Github, Instagram } from 'lucide-react';
 export const aboutIntro = {
   paragraph1: '你好，我是王金泽（Jinze Wang）。24 年毕业于宾夕法尼亚大学，数据科学硕士，目前从事数据工程师工作。对我来说，技术是杠杆，驱动我前进的是创造价值、解决问题、推动事情向前发展的成就感。',
   paragraph2: '享受通过数据分析与第一性原理洞察问题，通过各种技术寻找解决方案，寻找各种途径将方案落地的全过程。热爱足球、羽毛球。',
-  photo: './images/wjz1.jpg',
+  photo: '/intro_to_me/images/wjz1.jpg',
 };
 
 export const activities = [
@@ -147,7 +147,7 @@ export const indieProducts = [
       '自主设计并开发的趣味心理测评平台，提供趣味测试与专业心理测评，支持量化测评、维度分布分析与数据统计。平台已具备产品级稳定性，可直接用于心理服务、教育、内容创作者的量表挂载与推广。',
     metrics: '总用户 5,000+ · 累计测评 8,000+ 次 · 日活 ~20',
     tags: ['Next.js 15', 'TypeScript', 'Tailwind CSS', 'PostgreSQL', 'Prisma'],
-    images: ['./images/心理测评2.png', './images/心理测评1.png'],
+    images: ['/intro_to_me/images/心理测评2.png', '/intro_to_me/images/心理测评1.png'],
     link: 'https://knowyourself.com.cn',
   },
   {
@@ -164,7 +164,7 @@ export const indieProducts = [
       '在服务器上部署自动扫描程序，定时扫描 Polymarket 市场中的异常价格挂单信号与超高概率信号，通过飞书群回调实时通知，人工研判后进行交易，捕获低风险套利机会。',
     metrics: '实盘收益率 10%+ · 全自动运行',
     tags: ['Python', 'Automation', 'Web3', 'Quantitative Trading'],
-    images: ['./images/polymarket自动扫描.jpg'],
+    images: ['/intro_to_me/images/polymarket自动扫描.jpg'],
   },
   {
     title: '「八戒」戒断 App',
@@ -172,7 +172,7 @@ export const indieProducts = [
       '使用 Vibe Coding 方式快速搭建的 iOS 戒断类应用，帮助用户记录并克服各类成瘾习惯（手机、游戏、烟酒等）。支持戒断打卡、进度可视化、激励提醒等核心功能。',
     metrics: '软著申请中 · App Store 审核中',
     tags: ['iOS', 'Swift', 'Vibe Coding', 'App Store', 'Mobile'],
-    images: ['./images/八戒app宣传.png'],
+    images: ['/intro_to_me/images/八戒app宣传.png'],
   },
 ];
 
