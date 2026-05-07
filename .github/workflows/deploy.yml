@@ -25,11 +25,21 @@ jobs:
         run: npm run build
 
       - name: Setup SSH
+        env:
+          SSH_KEY: ${{ secrets.ECS_SSH_KEY }}
         run: |
           mkdir -p ~/.ssh
-          echo "${{ secrets.ECS_SSH_KEY }}" > ~/.ssh/id_ed25519
+          printf '%s\n' "$SSH_KEY" > ~/.ssh/id_ed25519
           chmod 600 ~/.ssh/id_ed25519
+          echo "--- key file head/tail ---"
+          head -1 ~/.ssh/id_ed25519
+          tail -1 ~/.ssh/id_ed25519
+          echo "--- key line count ---"
+          wc -l ~/.ssh/id_ed25519
+          echo "--- ssh-keyscan ECS ---"
           ssh-keyscan -H 39.102.120.6 >> ~/.ssh/known_hosts
+          echo "--- test ssh connection ---"
+          ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=no -o BatchMode=yes root@39.102.120.6 "echo ok"
 
       - name: Deploy via rsync
         run: |
