@@ -142,6 +142,15 @@ export const timelinePeriods = [
 
 export const indieProducts = [
   {
+    title: '小包 ReadyToGo · 行李打包助手',
+    description:
+      '完全离线的 iOS 出行打包清单 App。一次性问清楚你是谁、这趟去哪、干什么，再给出一份可直接打勾的清单。8 页横向滑动选择器（证件 / 衣物 / 洗漱 / 电子 / 药品 …），衣物子系统支持数量与性别差异；行程返程后自动归档，历史行程可一键复用。无账号、无云同步、无网络请求，所有数据存本地 SQLite。',
+    metrics: '已上线 App Store · 完全离线 · 零广告零注册',
+    tags: ['React Native', 'Expo SDK 54', 'TypeScript', 'SQLite', 'Zustand', 'iOS'],
+    images: ['/intro_to_me/images/小包.png'],
+    link: 'https://apps.apple.com/us/app/%E5%B0%8F%E5%8C%85-%E8%A1%8C%E6%9D%8E%E6%89%93%E5%8C%85%E6%B8%85%E5%8D%95/id6762072006',
+  },
+  {
     title: '心理量表测评平台',
     description:
       '自主设计并开发的趣味心理测评平台，提供趣味测试与专业心理测评，支持量化测评、维度分布分析与数据统计。平台已具备产品级稳定性，可直接用于心理服务、教育、内容创作者的量表挂载与推广。',
@@ -167,12 +176,13 @@ export const indieProducts = [
     images: ['/intro_to_me/images/polymarket自动扫描.jpg'],
   },
   {
-    title: '「八戒」戒断 App',
+    title: '「八戒」戒断助手 App',
     description:
       '使用 Vibe Coding 方式快速搭建的 iOS 戒断类应用，帮助用户记录并克服各类成瘾习惯（手机、游戏、烟酒等）。支持戒断打卡、进度可视化、激励提醒等核心功能。',
-    metrics: '软著申请中 · App Store 审核中',
+    metrics: '已上线 App Store',
     tags: ['iOS', 'Swift', 'Vibe Coding', 'App Store', 'Mobile'],
-    images: ['/intro_to_me/images/八戒app宣传.png'],
+    images: ['/intro_to_me/images/八戒.png'],
+    link: 'https://apps.apple.com/us/app/%E5%85%AB%E6%88%92-%E6%88%92%E6%96%AD%E5%8A%A9%E6%89%8B/id6757436622',
   },
 ];
 
