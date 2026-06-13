@@ -1,0 +1,114 @@
+% !TeX encoding = UTF-8
+% !TeX program = xelatex
+% !TeX spellcheck = en_US
+\documentclass{resume}
+\usepackage{zh_CN-Adobefonts_external}
+\usepackage{linespacing_fix}
+\usepackage{cite}
+\usepackage{comment}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=red]{hyperref}
+
+\usepackage[Chinese]{languageSelection}
+\usepackage[color=blue]{notePlus}
+
+\begin{document}
+\pagenumbering{gobble}
+
+%**********************************姓名**********************************************
+\CN{
+  \name{王金泽}
+}
+
+%**********************************联系方式****************************************
+\CN{
+  \info{手机：19921305351}{邮箱：wjz000414@gmail.com}{}{}
+  \info{\href{https://www.linkedin.com/in/jinze-wang-855498251/}{LinkedIn}}{\href{https://github.com/JinzeWang10}{GitHub}}{\href{https://knowyourself.com.cn/intro_to_me/}{个人网站}}{}
+}
+
+%**********************************个人定位**********************************************
+\CN{
+  \section{个人定位}
+  \vspace{0.5ex}
+  \textbf{Forward Deployed Engineer 取向}：全栈工程力 + 业务理解 + 端到端交付。能独立把系统从 0 搭到上线，也能与业务方做需求分析、把模糊问题翻译成可落地的方案；擅长用 LLM / Agent / MCP 把大模型塞进真实业务场景跑通闭环。已独立上线 5,000+ 用户的测评平台与 2 款 App Store 应用，覆盖产品设计、开发、服务器部署到增长运营全流程。
+}
+
+%**********************************教育背景**********************************************
+\CN{
+  \section{教育背景}
+
+  \datedsubsection{\textbf{宾夕法尼亚大学，应用科学学院}，\textit{数据科学，硕士}}{2022.08～2024.05}
+  \begin{itemize}[parsep=1ex]
+    \item \textbf{GPA}：3.93/4.0 $\quad$ $\quad$ UPenn 设计学院研究助理 $\quad$ $\quad$ Geospatial Data Science in Python 课程助教
+  \end{itemize}
+
+  \datedsubsection{\textbf{上海科技大学，信息学院}，\textit{计算机科学与技术，辅修金融学，学士}}{2018.08～2022.07}
+  \begin{itemize}[parsep=1ex]
+    \item \textbf{GPA}：3.70/4.0（前 10\%）$\quad$ $\quad$ 优秀毕业生、三好学生 $\quad$ $\quad$ 校足球队中锋（金靴奖）
+  \end{itemize}
+}
+
+%**********************************独立产品**********************************************
+\CN{
+  \section{独立产品 \hfill {\normalfont\small\textit{完整产品介绍、截图与演示请访问 \href{https://knowyourself.com.cn/intro_to_me/}{个人网站}}}}
+
+  \begin{itemize}[parsep=0.6ex]
+    \item \textbf{\href{https://knowyourself.com.cn}{心理量表测评平台}}（产品设计 / 域名 / 服务器部署 / 开发 / 增长运营）：基于 Next.js + PostgreSQL + Vibe Coding 搭建，支持量化测评、维度分布与数据统计；\textbf{累计 5,000+ 用户、8,000+ 次测评、日活 \textasciitilde 20}
+    \item \textbf{小红书自动运营系统}（方案设计 / Agent 编排 ）：基于 MCP + Python 构建图文生成 / 定时发帖 / 评论互动 / 引流闭环，已上线小红书店铺；\textbf{累计销售 ¥800+，全自动运行}
+    \item \textbf{\href{https://apps.apple.com/us/app/id6762072006}{小包 ReadyToGo · 行李打包助手}}（产品设计 / 开发 / App Store 上架）：基于 React Native + Expo + SQLite + Vibe Coding 的完全离线 iOS 出行打包 App，无账号 / 无云同步；\textbf{已上线 App Store}
+    \item \textbf{\href{https://apps.apple.com/us/app/id6757436622}{八戒 · 戒断助手}}（产品设计 / 开发 / App Store 上架）：基于 iOS + Vibe Coding 快速搭建的戒断打卡应用，支持进度可视化与激励提醒；\textbf{已上线 App Store}
+    \item \textbf{Polymarket 盯盘机器人}（策略设计 / 服务器部署 / 告警链路）：基于 Python 定时扫描异常价格信号与超高概率挂单，飞书实时回调；\textbf{实盘收益率 10\%+}
+  \end{itemize}
+}
+
+%**********************************工作经历**********************************************
+\CN{
+  \section{工作经历}
+
+  \datedsubsection{\textbf{中国人民财产保险（PICC）}}{2024.08～至今}
+  \datedsubsection{科技运营部 — 数据工程师}{北京}
+  \begin{itemize}[parsep=0.6ex]
+    \item 作为项目负责人独立交付内部指标平台：与多处室业务方做需求分析、跨团队协调，从数据库、后端到前端全流程落地
+    \item 搭建事件会诊 AI Agent，拉取并融合多源监控数据，调用大模型自动分析总结，辅助线上事件定位与处置
+    \item 参与设计、独立实现员工绩效度量模型，构建可解释、可扩展的指标体系；构建跨异构系统自动化 ETL 管道，解决跨处室、跨系统数据一致性问题
+  \end{itemize}
+
+  \datedsubsection{\textbf{Souscout}}{2023.06～2023.08}
+  \datedsubsection{数据工程师实习生}{纽约}
+  \begin{itemize}[parsep=0.6ex]
+    \item 使用 \textbf{Selenium} 从多站点爬取足球俱乐部与球员数据，绕开 Cloudflare 检测，多线程加速 60\%
+    \item 设计球员实体匹配方法，基于特征向量、规则模板与相似度衡量实现多站点 ID 匹配
+  \end{itemize}
+
+  \datedsubsection{\textbf{又为智能}}{2022.02～2022.06}
+  \datedsubsection{软件开发实习生}{上海}
+  \begin{itemize}[parsep=0.6ex]
+    \item 在 \textbf{Django} 框架下编写后端代码，处理前端请求、数据存储与第三方平台连接
+    \item 优化原有后端接口并添加鉴权，引入 Celery 队列将部分页面响应时间缩短 50\%
+  \end{itemize}
+
+  \datedsubsection{\textbf{德勤（Deloitte）}}{2021.08～2021.11}
+  \datedsubsection{风险咨询 — 数据分析实习生}{上海}
+  \begin{itemize}[parsep=0.6ex]
+    \item 使用决策树预测企业财务风险，并通过 \textbf{python-docx} 自动化批量生成评估报告，每季度节省 30 工时
+  \end{itemize}
+}
+
+%**********************************项目经历**********************************************
+\CN{
+  \section{项目经历}
+
+  \datedsubsection{\textbf{\href{https://github.com/JinzeWang10/quant-learning}{量化交易策略与回测系统}}}{2025}
+  \begin{itemize}[parsep=0.6ex]
+    \item 构建多维特征矩阵，使用 \textbf{随机森林}进行选股并输出多维概率评分，结合阈值策略生成交易信号
+    \item 基于 \textbf{Backtrader} 搭建回测框架，实现仓位动态调整、滑点与交易成本模拟、最大回撤约束
+  \end{itemize}
+
+  \datedsubsection{\textbf{Mini-Google 分布式搜索引擎}}{2024.02～2024.05}
+  \begin{itemize}[parsep=0.6ex]
+    \item 使用 \textbf{Java} Socket 搭建动态网络服务器，实现网页路由、会话管理、异常处理与 HTTPS 支持
+    \item 设计分布式 Key-Value Store，采用内存 + 磁盘混合存储；实现类 RDD 架构，支持 MapReduce 算子
+    \item 开发分布式爬虫实现网页批量抓取，基于 PageRank 完成排序与检索，整体部署运行于 AWS
+  \end{itemize}
+}
+
+\end{document}

@@ -58,7 +58,7 @@ const Hero = () => {
               variants={fadeUp}
               className="text-sm font-light text-[#999] tracking-widest uppercase mb-8"
             >
-              独立开发者 &mdash; Builder &mdash; 数据工程师
+              Forward Deployed Engineer &mdash; 独立开发者 &mdash; Builder
             </motion.p>
 
             {/* Separator */}
@@ -72,7 +72,7 @@ const Hero = () => {
               variants={fadeUp}
               className="text-lg font-light text-[#999] max-w-md leading-relaxed"
             >
-              独立开发者，把想法变成产品，把产品推向用户。
+              听懂业务问题，用工程 + AI 把它端到端落地成有人用的产品。
             </motion.p>
           </motion.div>
         </motion.div>

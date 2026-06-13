@@ -12,8 +12,8 @@ import { Mail, Phone, Linkedin, Github, Instagram } from 'lucide-react';
 // ============================================================
 
 export const aboutIntro = {
-  paragraph1: '你好，我是王金泽（Jinze Wang）。24 年毕业于宾夕法尼亚大学，数据科学硕士，目前从事数据工程师工作。对我来说，技术是杠杆，驱动我前进的是创造价值、解决问题、推动事情向前发展的成就感。',
-  paragraph2: '享受通过数据分析与第一性原理洞察问题，通过各种技术寻找解决方案，寻找各种途径将方案落地的全过程。热爱足球、羽毛球。',
+  paragraph1: '你好，我是王金泽（Jinze Wang）。24 年毕业于宾夕法尼亚大学，数据科学硕士。我是一名 Forward Deployed Engineer 取向的工程师——既能写全栈代码、把系统从 0 搭到上线，也能坐到业务方面前听懂他们真正的问题，再用工程 + AI 把方案端到端落地成能用、有人用的产品。技术对我来说是杠杆，驱动我前进的是创造价值、解决问题、推动事情向前的成就感。',
+  paragraph2: '享受用第一性原理洞察问题、用各种技术找到解法，再亲手把方案落地、推到真实用户面前的全过程。热爱足球、羽毛球。',
   photo: '/intro_to_me/images/wjz1.jpg',
 };
 
@@ -47,14 +47,14 @@ export const timelinePeriods = [
     period: '2024 - 至今',
     left: {
       title: 'PICC',
-      subtitle: '数据工程师（全职）',
+      subtitle: '全职 · 数据工程师 / 内部平台项目负责人',
       period: '2024.08 – 至今',
       location: '北京',
       achievements: [
-        '管理内部 KPI 平台，负责需求分析、跨团队协调和项目执行',
-        '使用 Pandas 构建员工绩效模型，参与数据库和前端设计',
-        '开发跨异构系统的自动化 ETL 管道',
-        '使用 Python、SNMP、Kafka 和 Flask 构建分布式监控系统',
+        '作为项目负责人独立交付内部指标平台：与多处室业务方做需求分析、跨团队协调，从数据库、后端到前端全流程落地',
+        '搭建事件会诊 AI Agent：融合多源监控数据、调用大模型自动分析总结，辅助定位与处置',
+        '参与设计、独立实现员工绩效度量模型，构建可解释、可扩展的指标体系',
+        '构建跨异构系统的自动化 ETL 管道与分布式监控系统（Python / Kafka / Flask / SNMP），解决跨系统数据一致性问题',
       ],
     },
     right: null,
@@ -163,7 +163,7 @@ export const indieProducts = [
     title: '小红书全自动化运营系统',
     description:
       '基于 MCP（Model Context Protocol）构建小红书账号全自动运营流水线：自动生成图文内容、定时发帖、评论互动，将流量精准引导至心理测评网站，实现从内容创作到用户转化的闭环。已上线小红书店铺并持续引流变现。',
-    metrics: '日均盈利 ¥5 · 累计盈利 ¥300+ · 全自动运行',
+    metrics: '累计销售 ¥800+ · 全自动运行',
     tags: ['MCP', 'AI Agent', 'Automation', 'Growth Hacking', 'Python'],
     link: 'https://www.xiaohongshu.com/shop/691ebeb8c2678f0015c613d1?instation_link=xhsdiscover%3A%2F%2Fshop_detail%3Fseller_id%3D691ebeb8c2678f0015c613d1%26general_param%3D%257B%2522source%2522%3A%2522share%2522%257D%26source%3Dshare&page_instance=3957&back_chain_id=shop_homepage_share',
   },
@@ -260,30 +260,30 @@ export const projects = [
 
 export const technicalSkills = [
   {
-    category: 'Data Scraping',
-    skills: ['Selenium', 'BeautifulSoup', '多线程爬取', 'API & 异构数据源采集'],
+    category: 'AI & LLM 应用',
+    skills: ['LLM 落地', 'AI Agent 编排', 'MCP', 'LLM API', 'Prompt Engineering', 'Vibe Coding'],
   },
   {
-    category: 'Data Manipulation',
-    skills: ['SQL', 'Pandas', 'Spark'],
+    category: '全栈开发',
+    skills: ['Next.js', 'React', 'React Native / Expo', 'Django', 'Flask', 'Node.js', 'TypeScript'],
   },
   {
-    category: 'Machine Learning',
-    skills: ['Scikit-learn', 'PyTorch', 'PySpark MLlib'],
+    category: '数据 & 后端',
+    skills: ['Python', 'Pandas', 'SQL', 'PostgreSQL', 'MongoDB', 'Kafka', 'Spark', 'ETL'],
   },
   {
-    category: 'Database Management',
-    skills: ['PostgreSQL', 'MySQL', 'MongoDB'],
+    category: '部署 & 工程化',
+    skills: ['Linux 服务器部署', 'Nginx', '阿里云 ECS', 'Git', 'Vite', 'SQLite'],
   },
 ];
 
 export const softSkills = [
-  { name: '快速学习' },
+  { name: '业务理解' },
+  { name: '端到端交付' },
+  { name: '客户 / 干系人沟通' },
   { name: '跨团队协作' },
-  { name: '问题解决能力' },
-  { name: '创新思维' },
+  { name: '快速学习' },
   { name: '执行力' },
-  { name: '抗压能力' },
 ];
 
 export const skillsQuote = {
