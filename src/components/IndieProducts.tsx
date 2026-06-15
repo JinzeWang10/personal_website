@@ -1,13 +1,15 @@
 import { useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
-import { indieProducts } from '../data';
 import { fadeUp, staggerContainer } from '../lib/animations';
+import { useLocale } from '../i18n';
 
 const IndieProducts = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-80px' });
   const [expandedImages, setExpandedImages] = useState<number | null>(null);
+  const { t, ui } = useLocale();
+  const indieProducts = t.indieProducts;
 
   const toggleImages = (i: number) => {
     setExpandedImages(expandedImages === i ? null : i);
@@ -80,7 +82,7 @@ const IndieProducts = () => {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-1.5 text-sm text-white/80 hover:text-white transition-colors border-b border-white/20 hover:border-white/60 pb-0.5"
                       >
-                        查看项目
+                        {ui.viewProject}
                         <ExternalLink size={12} />
                       </a>
                     )}
@@ -90,7 +92,7 @@ const IndieProducts = () => {
                         onClick={() => toggleImages(i)}
                         className="inline-flex items-center gap-1.5 text-sm text-white/80 hover:text-white transition-colors border-b border-white/20 hover:border-white/60 pb-0.5 cursor-none"
                       >
-                        {expandedImages === i ? '收起截图' : '查看截图'}
+                        {expandedImages === i ? ui.hideShots : ui.viewShots}
                         <motion.span
                           initial={false}
                           animate={{ rotate: expandedImages === i ? 90 : 0 }}
@@ -123,7 +125,7 @@ const IndieProducts = () => {
                         }`}>
                           <img
                             src={src}
-                            alt={`${product.title} 截图 ${si + 1}`}
+                            alt={`${product.title} ${ui.screenshot} ${si + 1}`}
                             className="w-full h-auto object-cover"
                           />
                         </div>

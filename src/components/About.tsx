@@ -1,11 +1,13 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { aboutIntro, activities, values } from '../data';
 import { fadeUp, staggerContainer } from '../lib/animations';
+import { useLocale } from '../i18n';
 
 const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-80px' });
+  const { t } = useLocale();
+  const { aboutIntro, activities, values } = t;
 
   return (
     <section id="about" className="py-32 md:py-40 bg-black relative">

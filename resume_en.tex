@@ -1,0 +1,115 @@
+% !TeX encoding = UTF-8
+% !TeX program = xelatex
+% !TeX spellcheck = en_US
+\documentclass{resume}
+\usepackage{zh_CN-Adobefonts_external}
+\usepackage{linespacing_fix}
+\usepackage{cite}
+\usepackage{comment}
+\usepackage[colorlinks=true, urlcolor=blue, linkcolor=blue]{hyperref}
+
+% Tighten vertical spacing to keep everything on one page (spacing only, no content cut)
+\usepackage{enumitem}
+\setlist[itemize]{topsep=2pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=1.5pc}
+\titlespacing*{\section}{0pt}{*0.5}{*0.4}
+\titlespacing*{\subsection}{0pt}{*0.4}{*0.2}
+
+\begin{document}
+\pagenumbering{gobble}
+
+%********************************** Name **********************************************
+\name{Jinze Wang}
+
+%********************************** Contact *******************************************
+\info{Phone: (+86) 19921305351}{Email: wjz000414@gmail.com}{}{}
+\info{\href{https://www.linkedin.com/in/jinze-wang-855498251/}{LinkedIn}}{\href{https://github.com/JinzeWang10}{GitHub}}{\href{https://knowyourself.com.cn/intro_to_me/}{Personal Website}}{}
+
+%********************************** Summary *******************************************
+\section{Summary}
+\vspace{0.5ex}
+Forward Deployed Engineer--oriented software engineer and end-to-end builder: I ship full-stack systems from zero to production, sit with business stakeholders to uncover the real problem, and turn it into working, adopted products with engineering and AI. Technology is the leverage; what drives me is creating value and moving things forward.
+
+%********************************** Education *****************************************
+\section{Education}
+
+\datedsubsection{\textbf{University of Pennsylvania}, School of Engineering and Applied Science --- \textit{M.S. in Data Science}}{Aug 2022 -- May 2024}
+\begin{itemize}[parsep=0.4ex]
+  \item \textbf{GPA}: 3.93/4.0 $\quad$ $\quad$ Research Assistant, Weitzman School of Design $\quad$ $\quad$ TA, Geospatial Data Science in Python
+\end{itemize}
+
+\datedsubsection{\textbf{ShanghaiTech University}, School of Information Science and Technology --- \textit{B.S. in Computer Science, Minor in Finance}}{Aug 2018 -- Jul 2022}
+\begin{itemize}[parsep=0.4ex]
+  \item \textbf{GPA}: 3.70/4.0 (Top 10\%) $\quad$ $\quad$ Outstanding Graduate $\quad$ $\quad$ Varsity football striker (Golden Boot)
+\end{itemize}
+
+%********************************** Independent Products ******************************
+\section{Independent Products \hfill {\normalfont\small\textit{Full write-ups, screenshots \& demos at my \href{https://knowyourself.com.cn/intro_to_me/}{personal website}}}}
+
+\begin{itemize}[parsep=0.6ex]
+  \item \textbf{\href{https://knowyourself.com.cn}{Psychometric Assessment Platform}} (product design / domain / server deployment / development / growth): built on Next.js + PostgreSQL with quantified assessments, dimension distributions and analytics; \textbf{5,000+ users, 8,000+ assessments, \textasciitilde 20 DAU}
+  \item \textbf{Xiaohongshu Auto-Operation System} (solution design / agent orchestration): MCP + Python pipeline for content generation / scheduled posting / comment interaction / traffic funnel, live storefront; \textbf{fully autonomous}
+  \item \textbf{\href{https://apps.apple.com/us/app/id6762072006}{ReadyToGo $\cdot$ Travel Packing Assistant}} (product design / development / App Store launch): a fully offline iOS packing app on React Native + Expo + SQLite, no account / no cloud sync; \textbf{live on the App Store}
+  \item \textbf{\href{https://apps.apple.com/us/app/id6757436622}{Bajie $\cdot$ Habit-Quitting Assistant}} (product design / development / App Store launch): native iOS habit-quitting tracker with progress visualization and reminders; \textbf{live on the App Store}
+  \item \textbf{Polymarket Watch Bot} (strategy design / server deployment / alerting): Python scanner for abnormal price signals and high-probability orders with real-time Feishu callbacks; \textbf{10\%+ live return}
+\end{itemize}
+
+%********************************** Experience ***************************************
+\section{Experience}
+
+\datedsubsection{\textbf{PICC (People's Insurance Company of China)}}{Aug 2024 -- Present}
+\datedsubsection{Technology Operations Dept. --- Data Engineer}{Beijing}
+\begin{itemize}[parsep=0.6ex]
+  \item Independently designed and built the \textbf{``Ops Metrics'' performance system}, replacing manual Excel calculation and now \textbf{a standardized quarterly mechanism}; a single run covers \textbf{600+} in-house and outsourced ops staff across 7 divisions, 17 tech lines and 53 metrics, with results \textbf{used for outsourced-staff promotion/demotion}
+  \item Leadership set the metric direction; I \textbf{defined the detailed criteria by aligning one-on-one with 10+ tech-line owners} --- iterating the scoring model on reasonable requests and using data to drive consensus on a unified standard
+  \item Integrated heterogeneous \textbf{SQL / Jira / Excel} sources into a multi-dimensional weighted scoring engine with automated validation and analytical reports, delivered end-to-end single-handedly
+  \item Built \textbf{``Incident Diagnosis Snapshot''} (deployed on the company intranet): on incident trigger it auto-aggregates multi-source monitoring data, uses an LLM to produce a sourced, fact-only situation brief (model constrained to restate given data, no free generation, to suppress hallucination), rendered to a PNG dashboard pushed to the incident group
+  \item Built \textbf{``NLU Auto-Grouping''} (deployed on intranet): a single natural-language sentence pulls the relevant systems' ops/dev owners into the incident group
+  \item Led design and development of an \textbf{Incident RCA Agent}: a three-stage pipeline (parallel multi-source collection $\rightarrow$ multi-round LLM hypothesis testing $\rightarrow$ \textbf{Top 3 suspected root causes + evidence chain}) to assist on-call triage; centered on a \textbf{knowledge-precipitation flywheel} --- post-mortem ground-truth root causes, misjudgment feedback and investigation traces flow back to continuously grow \textbf{failure-pattern / case knowledge bases} that feed the Agent
+\end{itemize}
+
+\datedsubsection{\textbf{Souscout}}{Jun 2023 -- Aug 2023}
+\datedsubsection{Data Engineer Intern}{New York}
+\begin{itemize}[parsep=0.6ex]
+  \item Scraped football club and player data across multiple sites with \textbf{Selenium}, bypassing Cloudflare detection; 60\% speedup via multithreading
+  \item Designed a player entity-matching method using feature vectors, rule templates and similarity scoring for cross-site ID matching
+\end{itemize}
+
+\datedsubsection{\textbf{Youwei Intelligent}}{Feb 2022 -- Jun 2022}
+\datedsubsection{Software Development Intern}{Shanghai}
+\begin{itemize}[parsep=0.6ex]
+  \item Built backend in \textbf{Django} handling frontend requests, data storage and third-party integrations
+  \item Optimized existing APIs and added authentication; introduced Celery queues, cutting some page response times by 50\%
+\end{itemize}
+
+\datedsubsection{\textbf{Deloitte}}{Aug 2021 -- Nov 2021}
+\datedsubsection{Risk Advisory --- Data Analysis Intern}{Shanghai}
+\begin{itemize}[parsep=0.6ex]
+  \item Predicted corporate financial risk with decision trees and batch-generated assessment reports via \textbf{python-docx}, saving 30 hours per quarter
+\end{itemize}
+
+%********************************** Projects *****************************************
+\section{Projects}
+
+\datedsubsection{\textbf{\href{https://github.com/JinzeWang10/quant-learning}{Quantitative Trading Strategy \& Backtesting System}}}{}
+\begin{itemize}[parsep=0.6ex]
+  \item Built a multi-dimensional feature matrix; \textbf{random-forest} stock selection with multi-dimensional probability scoring and threshold-based signal generation
+  \item Built a backtesting framework on \textbf{Backtrader} with dynamic position sizing, slippage and transaction-cost simulation, and max-drawdown constraints
+\end{itemize}
+
+\datedsubsection{\textbf{Mini-Google Distributed Search Engine}}{}
+\begin{itemize}[parsep=0.6ex]
+  \item Built a dynamic web server with \textbf{Java} Sockets: routing, session management, exception handling and HTTPS
+  \item Designed a distributed key-value store with hybrid memory + disk storage; implemented an RDD-like architecture supporting MapReduce operators
+  \item Developed a distributed crawler for bulk web crawling; PageRank-based ranking and retrieval, deployed end-to-end on AWS
+\end{itemize}
+
+%********************************** Skills *******************************************
+\section{Skills}
+\begin{itemize}[parsep=0.4ex]
+  \item \textbf{AI \& LLM}: LLM applications, AI Agent orchestration, MCP, LLM APIs, Prompt Engineering
+  \item \textbf{Full-stack}: Next.js, React, React Native / Expo, Django, Flask, Node.js, TypeScript
+  \item \textbf{Data \& Backend}: Python, Pandas, SQL, PostgreSQL, Kafka, Spark, ETL
+  \item \textbf{DevOps}: Linux server deployment, Nginx, Aliyun ECS, Git, Vite, SQLite
+\end{itemize}
+
+\end{document}

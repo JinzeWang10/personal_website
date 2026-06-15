@@ -1,13 +1,15 @@
 import { useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import { ExternalLink } from 'lucide-react';
-import { projects } from '../data';
 import { fadeUp, staggerContainer } from '../lib/animations';
+import { useLocale } from '../i18n';
 
 const Projects = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-80px' });
   const [expanded, setExpanded] = useState<number | null>(null);
+  const { t, ui } = useLocale();
+  const projects = t.projects;
 
   const toggle = (i: number) => {
     setExpanded(expanded === i ? null : i);
@@ -96,7 +98,7 @@ const Projects = () => {
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-1.5 text-sm text-white/80 hover:text-white transition-colors border-b border-white/20 hover:border-white/60 pb-0.5 mt-3"
                           >
-                            查看项目
+                            {ui.viewProject}
                             <ExternalLink size={12} />
                           </a>
                         )}

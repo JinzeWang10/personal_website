@@ -11,6 +11,13 @@
 \usepackage[Chinese]{languageSelection}
 \usepackage[color=blue]{notePlus}
 
+% 全局收紧纵向间距，便于压在一页（只动间距，不删内容）
+\usepackage{enumitem}
+\setlist[itemize]{topsep=2pt, partopsep=0pt, parsep=0pt, itemsep=0pt, leftmargin=1.5pc}
+% 收紧 section / subsection 标题的上下留白（最省纵向空间的地方）
+\titlespacing*{\section}{0pt}{*0.5}{*0.4}
+\titlespacing*{\subsection}{0pt}{*0.4}{*0.2}
+
 \begin{document}
 \pagenumbering{gobble}
 
@@ -21,7 +28,7 @@
 
 %**********************************联系方式****************************************
 \CN{
-  \info{手机：19921305351}{邮箱：wjz000414@gmail.com}{}{}
+  \info{手机/微信：19921305351}{邮箱：wjz000414@gmail.com}{}{}
   \info{\href{https://www.linkedin.com/in/jinze-wang-855498251/}{LinkedIn}}{\href{https://github.com/JinzeWang10}{GitHub}}{\href{https://knowyourself.com.cn/intro_to_me/}{个人网站}}{}
 }
 
@@ -30,12 +37,12 @@
   \section{教育背景}
 
   \datedsubsection{\textbf{宾夕法尼亚大学，应用科学学院}，\textit{数据科学，硕士}}{2022.08～2024.05}
-  \begin{itemize}[parsep=1ex]
+  \begin{itemize}[parsep=0.4ex]
     \item \textbf{GPA}：3.93/4.0 $\quad$ $\quad$ UPenn 设计学院研究助理 $\quad$ $\quad$ Geospatial Data Science in Python 课程助教
   \end{itemize}
 
   \datedsubsection{\textbf{上海科技大学，信息学院}，\textit{计算机科学与技术，辅修金融学，学士}}{2018.08～2022.07}
-  \begin{itemize}[parsep=1ex]
+  \begin{itemize}[parsep=0.4ex]
     \item \textbf{GPA}：3.70/4.0（前 10\%）$\quad$ $\quad$ 优秀毕业生、三好学生 $\quad$ $\quad$ 校足球队中锋（金靴奖）
   \end{itemize}
 }
@@ -45,10 +52,10 @@
   \section{独立产品 \hfill {\normalfont\small\textit{完整产品介绍、截图与演示请访问 \href{https://knowyourself.com.cn/intro_to_me/}{个人网站}}}}
 
   \begin{itemize}[parsep=0.6ex]
-    \item \textbf{\href{https://knowyourself.com.cn}{心理量表测评平台}}（产品设计 / 域名 / 服务器部署 / 开发 / 增长运营）：基于 Next.js + PostgreSQL + Vibe Coding 搭建，支持量化测评、维度分布与数据统计；\textbf{累计 5,000+ 用户、8,000+ 次测评、日活 \textasciitilde 20}
+    \item \textbf{\href{https://knowyourself.com.cn}{心理量表测评平台}}（产品设计 / 域名 / 服务器部署 / 开发 / 增长运营）：基于 Next.js + PostgreSQL 搭建，支持量化测评、维度分布与数据统计；\textbf{累计 5,000+ 用户、8,000+ 次测评、日活 \textasciitilde 20}
     \item \textbf{小红书自动运营系统}（方案设计 / Agent 编排 ）：基于 MCP + Python 构建图文生成 / 定时发帖 / 评论互动 / 引流闭环，已上线小红书店铺；\textbf{累计销售 ¥800+，全自动运行}
-    \item \textbf{\href{https://apps.apple.com/us/app/id6762072006}{小包 ReadyToGo · 行李打包助手}}（产品设计 / 开发 / App Store 上架）：基于 React Native + Expo + SQLite + Vibe Coding 的完全离线 iOS 出行打包 App，无账号 / 无云同步；\textbf{已上线 App Store}
-    \item \textbf{\href{https://apps.apple.com/us/app/id6757436622}{八戒 · 戒断助手}}（产品设计 / 开发 / App Store 上架）：基于 iOS + Vibe Coding 快速搭建的戒断打卡应用，支持进度可视化与激励提醒；\textbf{已上线 App Store}
+    \item \textbf{\href{https://apps.apple.com/us/app/id6762072006}{小包 ReadyToGo · 行李打包助手}}（产品设计 / 开发 / App Store 上架）：基于 React Native + Expo + SQLite 的完全离线 iOS 出行打包 App，无账号 / 无云同步；\textbf{已上线 App Store}
+    \item \textbf{\href{https://apps.apple.com/us/app/id6757436622}{八戒 · 戒断助手}}（产品设计 / 开发 / App Store 上架）：基于 iOS 原生快速搭建的戒断打卡应用，支持进度可视化与激励提醒；\textbf{已上线 App Store}
     \item \textbf{Polymarket 盯盘机器人}（策略设计 / 服务器部署 / 告警链路）：基于 Python 定时扫描异常价格信号与超高概率挂单，飞书实时回调；\textbf{实盘收益率 10\%+}
   \end{itemize}
 }
@@ -60,9 +67,10 @@
   \datedsubsection{\textbf{中国人民财产保险（PICC）}}{2024.08～至今}
   \datedsubsection{科技运营部 — 数据工程师}{北京}
   \begin{itemize}[parsep=0.6ex]
-    \item 独立设计实现「运维度量」绩效系统（领导定指标方向，口径、算法与落地由我主导沟通搭建）：单月度量 \textbf{600+ 名}内外部运维人员，横跨 7 个处室、17 条技术线、53 项指标；结果\textbf{直接用于外部人员升降级}，取代原有手工 Excel 测算
-    \item 打通 SQL / Jira / 手工 Excel 多源异构数据，统一到「人 $\times$ 岗位 $\times$ 指标」粒度，实现百分位排名与基础/挑战目标加权评分、逐层（一级组 $\rightarrow$ 岗位 $\rightarrow$ 技术线）聚合；配套自动校验与多维分析报告，全链路一人端到端交付
-    \item 自研两个运维 Agent 并\textbf{上线公司内网}：① 事件会诊速览（监控数据确定性特征抽取 $\rightarrow$ 受约束内网大模型防幻觉简报 $\rightarrow$ 无头 Chromium 渲染 PNG 会诊看板）；② NLU 自动拉群（自然语言把对应系统负责人拉入事件群）；并在此基础上推进事件处置 RCA Agent（V1$\rightarrow$V3 落地方案 + 故障模式/案例知识库）
+    \item 独立设计实现「运维度量」绩效系统，\textbf{逐一与十余位技术线负责人对齐谈定}指标口径；单次覆盖 \textbf{600+ 名}内外部运维人员、横跨 7 处室、17 技术线、53 项指标，结果\textbf{用于外部人员升降级}
+    \item 打通 SQL / Jira / Excel 多源异构数据，构建多维加权评分引擎，配套自动校验与分析报告，全链路一人交付
+    \item 自研「事件会诊速览」并\textbf{上线公司内网}：事件发生时自动聚合多源监控数据，用大模型将其归纳成带出处的现象简报，渲染成 PNG 会诊看板推送到事件群，帮值班快速掌握现场
+    \item 主导设计并研发\textbf{事件根因分析 Agent}，自动调查并输出 Top 3 嫌疑根因 + 证据链;构建\textbf{知识沉淀飞轮}——把复盘真实根因、误判反馈与每次调查轨迹结构化回流，持续生长\textbf{故障模式 / 案例}知识库并反哺 Agent
   \end{itemize}
 
   \datedsubsection{\textbf{Souscout}}{2023.06～2023.08}
@@ -90,13 +98,13 @@
 \CN{
   \section{项目经历}
 
-  \datedsubsection{\textbf{\href{https://github.com/JinzeWang10/quant-learning}{量化交易策略与回测系统}}}{2025}
+  \datedsubsection{\textbf{\href{https://github.com/JinzeWang10/quant-learning}{量化交易策略与回测系统}}}{}
   \begin{itemize}[parsep=0.6ex]
     \item 构建多维特征矩阵，使用 \textbf{随机森林}进行选股并输出多维概率评分，结合阈值策略生成交易信号
     \item 基于 \textbf{Backtrader} 搭建回测框架，实现仓位动态调整、滑点与交易成本模拟、最大回撤约束
   \end{itemize}
 
-  \datedsubsection{\textbf{Mini-Google 分布式搜索引擎}}{2024.02～2024.05}
+  \datedsubsection{\textbf{Mini-Google 分布式搜索引擎}}{}
   \begin{itemize}[parsep=0.6ex]
     \item 使用 \textbf{Java} Socket 搭建动态网络服务器，实现网页路由、会话管理、异常处理与 HTTPS 支持
     \item 设计分布式 Key-Value Store，采用内存 + 磁盘混合存储；实现类 RDD 架构，支持 MapReduce 算子

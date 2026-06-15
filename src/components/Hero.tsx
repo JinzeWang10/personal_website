@@ -1,9 +1,11 @@
 import { motion, useTransform } from 'framer-motion';
 import { useMousePosition } from '../hooks/useMousePosition';
 import { wipeIn, fadeUp, staggerContainer } from '../lib/animations';
+import { useLocale } from '../i18n';
 
 const Hero = () => {
   const { x, y, windowSize } = useMousePosition();
+  const { ui } = useLocale();
 
   const rotateX = useTransform(y, [0, windowSize.h], [8, -8]);
   const rotateY = useTransform(x, [0, windowSize.w], [-8, 8]);
@@ -43,13 +45,13 @@ const Hero = () => {
                 variants={wipeIn}
                 className="text-display font-black tracking-tighter text-white leading-none"
               >
-                王金泽
+                {ui.hero.namePrimary}
               </motion.h1>
               <motion.p
                 variants={fadeUp}
                 className="text-2xl font-light text-[#555] tracking-widest mt-3"
               >
-                JINZE WANG
+                {ui.hero.nameSecondary}
               </motion.p>
             </div>
 
@@ -58,7 +60,7 @@ const Hero = () => {
               variants={fadeUp}
               className="text-sm font-light text-[#999] tracking-widest uppercase mb-8"
             >
-              Forward Deployed Engineer &mdash; 独立开发者 &mdash; Builder
+              {ui.hero.role}
             </motion.p>
 
             {/* Separator */}
@@ -72,7 +74,7 @@ const Hero = () => {
               variants={fadeUp}
               className="text-lg font-light text-[#999] max-w-md leading-relaxed"
             >
-              听懂业务问题，用工程 + AI 把它端到端落地成有人用的产品。
+              {ui.hero.oneLiner}
             </motion.p>
           </motion.div>
         </motion.div>

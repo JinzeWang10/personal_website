@@ -1,18 +1,20 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
-
-const navItems = [
-  { label: 'About', href: '#about' },
-  { label: 'Products', href: '#products' },
-  { label: 'Experience', href: '#experience' },
-  { label: 'Projects', href: '#projects' },
-  { label: 'Contact', href: '#contact' },
-];
+import { useLocale } from '../i18n';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { ui, toggle } = useLocale();
+
+  const navItems = [
+    { label: ui.nav.about, href: '#about' },
+    { label: ui.nav.products, href: '#products' },
+    { label: ui.nav.experience, href: '#experience' },
+    { label: ui.nav.projects, href: '#projects' },
+    { label: ui.nav.contact, href: '#contact' },
+  ];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 50);
@@ -51,14 +53,30 @@ const Navbar = () => {
                 <span className="absolute left-0 -bottom-1 h-px w-full bg-white origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
               </a>
             ))}
+            <button
+              onClick={toggle}
+              aria-label="Switch language"
+              className="text-xs font-mono tracking-[0.2em] text-[#999] hover:text-white transition-colors duration-300 border border-[#333] hover:border-white/60 rounded-full px-3 py-1"
+            >
+              {ui.langToggle}
+            </button>
           </div>
 
-          <button
-            className="md:hidden text-white"
-            onClick={() => setMobileOpen(!mobileOpen)}
-          >
-            {mobileOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          <div className="flex items-center gap-4 md:hidden">
+            <button
+              onClick={toggle}
+              aria-label="Switch language"
+              className="text-xs font-mono tracking-[0.2em] text-[#999] hover:text-white transition-colors border border-[#333] rounded-full px-3 py-1"
+            >
+              {ui.langToggle}
+            </button>
+            <button
+              className="text-white"
+              onClick={() => setMobileOpen(!mobileOpen)}
+            >
+              {mobileOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
       </motion.nav>
 

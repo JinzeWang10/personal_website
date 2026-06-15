@@ -7,22 +7,25 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
+import { LocaleProvider } from './i18n';
 
 function App() {
   return (
-    <div className="min-h-screen bg-black text-white">
-      <CustomCursor />
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <IndieProducts />
-        <Experience />
-        <Projects />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <LocaleProvider>
+      <div className="min-h-screen bg-black text-white">
+        <CustomCursor />
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <IndieProducts />
+          <Experience />
+          <Projects />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </LocaleProvider>
   );
 }
 

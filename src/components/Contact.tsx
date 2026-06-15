@@ -1,11 +1,14 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { Download } from 'lucide-react';
 import { contactInfo, socialLinks } from '../data';
 import { fadeUp, wipeIn, staggerContainer } from '../lib/animations';
+import { useLocale } from '../i18n';
 
 const Contact = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-80px' });
+  const { ui } = useLocale();
 
   const emailItem = contactInfo.find((c) => c.label === 'Email');
   const phoneItem = contactInfo.find((c) => c.label === 'Phone');
@@ -38,7 +41,7 @@ const Contact = () => {
                 variants={wipeIn}
                 className="text-display font-black text-white leading-none mb-12"
               >
-                聊聊.
+                {ui.contactHeadline}
               </motion.h2>
 
               {/* Email */}
@@ -60,6 +63,7 @@ const Contact = () => {
                     href={phoneItem.href}
                     className="font-mono text-sm text-[#555] hover:text-[#999] transition-colors"
                   >
+                    <span className="text-[#444]">{ui.phoneNote} </span>
                     {phoneItem.value}
                   </a>
                 </motion.div>
@@ -83,6 +87,19 @@ const Contact = () => {
                   </span>
                 ))}
               </motion.div>
+
+              {/* Résumé download */}
+              <motion.div variants={fadeUp} className="mt-10">
+                <a
+                  href={ui.resumeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm tracking-wide text-white/80 hover:text-white border border-[#333] hover:border-white/60 rounded-full px-5 py-2.5 transition-colors duration-300"
+                >
+                  <Download size={14} />
+                  {ui.resumeLabel}
+                </a>
+              </motion.div>
             </motion.div>
           </div>
 
@@ -94,9 +111,9 @@ const Contact = () => {
             className="flex items-end md:justify-end"
           >
             <p className="text-xs font-mono text-[#333] tracking-widest leading-relaxed text-right">
-              坐标北京
+              {ui.contactByline[0]}
               <br />
-              远程可
+              {ui.contactByline[1]}
               <br />
               {new Date().getFullYear()}
             </p>

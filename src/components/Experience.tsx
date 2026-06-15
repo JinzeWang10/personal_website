@@ -1,7 +1,7 @@
 import { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import { timelinePeriods } from '../data';
 import { fadeUp, staggerContainer } from '../lib/animations';
+import { useLocale } from '../i18n';
 
 interface TimelineEntry {
   title: string;
@@ -56,6 +56,8 @@ const EntryCard = ({ entry, delay = 0 }: { entry: TimelineEntry; delay?: number 
 const Experience = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: '-80px' });
+  const { t } = useLocale();
+  const timelinePeriods = t.timelinePeriods;
 
   return (
     <section id="experience" className="py-32 md:py-40 bg-black relative">
